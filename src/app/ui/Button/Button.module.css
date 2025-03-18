@@ -1,10 +1,10 @@
 .buttonWrapper {
   display: flex;
   width: fit-content;
-  border: 2px solid var(--bg-dark);
+  border: 2px solid var(--bg-light);
   border-radius: var(--border-radius);
-  color: var(--font-color-dark);
-  padding: 0.25rem 0.5rem;
+  color: var(--font-color-light);
+  padding: 0.35rem 0.75rem;
   gap: 0.15rem;
   cursor: pointer;
   align-items: center;
@@ -21,6 +21,11 @@
 
 .buttonWrapper img {
   transition: all 0.1s ease-in-out;
+}
+
+.filled {
+  background: var(--bg-white);
+  border-color: var(--bg-white);
 }
 
 .dark {

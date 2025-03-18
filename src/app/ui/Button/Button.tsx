@@ -5,23 +5,26 @@ import styles from './Button.module.css';
 type IButtonProps = {
   text: string;
   onClick: () => void;
-  darkMode?: boolean;
+  theme: 'light' | 'dark';
+  fill?: boolean;
 };
 
 const Button: React.FunctionComponent<IButtonProps> = ({
   text,
   onClick,
-  darkMode = false,
+  theme,
+  fill = false,
 }) => {
   return (
     <div className={clsx(styles.buttonWrapper, {
-      [styles.dark!]: darkMode,
+      [styles.dark!]: theme === 'dark',
+      [styles.filled!]: fill,
     })}
     >
       <button type="button" onClick={onClick}>{text}</button>
       <Image
         aria-hidden
-        src="/arrow-up-right.svg"
+        src={theme === 'dark' ? '/arrow-up-right-dark.svg' : '/arrow-up-right-light.svg'}
         alt="Arrow Facing Top Right"
         width={22}
         height={22}

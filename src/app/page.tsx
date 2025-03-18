@@ -5,7 +5,7 @@ import Button from './ui/Button/Button';
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Button text="Get Connected" darkMode onClick={() => {}} />
+      <Button text="Get Connected" theme="dark" onClick={() => {}} />
     </div>
   );
 }
