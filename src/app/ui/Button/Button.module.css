@@ -1,0 +1,36 @@
+.buttonWrapper {
+  display: flex;
+  width: fit-content;
+  border: 2px solid var(--bg-dark);
+  border-radius: var(--border-radius);
+  color: var(--font-color-dark);
+  padding: 0.25rem 0.5rem;
+  gap: 0.15rem;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonWrapper button {
+  all: unset;
+  font-size: 1rem;
+  font-weight: 600;
+  transform: translateY(1px);
+  font-color: inherit;
+}
+
+.buttonWrapper img {
+  transition: all 0.1s ease-in-out;
+}
+
+.dark {
+  border: 2px solid var(--bg-dark);
+  color: var(--font-color-dark);
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .buttonWrapper:hover img {
+    transform: translate(10%, -10%);
+  }
+}
