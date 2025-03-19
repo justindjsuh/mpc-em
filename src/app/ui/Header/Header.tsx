@@ -13,11 +13,13 @@ const Header: React.FunctionComponent = () => {
   const navigatedOut = Object.values(navigated).every(Boolean);
 
   const handleMouseEnter = (item: string) => {
-    setNavTriggered({ triggered: true, lastVisited: item });
+    setTimeout(() => {
+      setNavTriggered({ triggered: true, lastVisited: item });
+    }, 100);
   };
 
   useEffect(() => {
-    if (!navigatedOut) {
+    if (navigatedOut) {
       setNavTriggered({ triggered: false, lastVisited: '' });
     }
   }, [navigatedOut]);

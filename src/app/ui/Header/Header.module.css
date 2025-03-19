@@ -54,13 +54,13 @@
 
 .navDropdownTop {
   padding: 0rem 8rem;
-  height: 50%;
 }
 
 .expandedNav {
   display: flex;
   padding: 2rem 0rem;
   gap: 5rem;
+  pointer-events: none;
 }
 
 .quickActions {
@@ -81,6 +81,7 @@
 
 .navSpecificActions a {
   font-weight: 600;
+  pointer-events: auto;
 }
 
 .expandedNav p {
@@ -91,6 +92,7 @@
 .quickActions a {
   font-size: var(--header3-size);
   font-weight: 700;
+  pointer-events: auto;
 }
 
 .navDropdownBot {
