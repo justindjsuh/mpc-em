@@ -103,9 +103,55 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.hamburgerMenu {
+  display: none;
+}
+
+.mobileMenuDropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+}
+
+.navSpecificActionsMobile {
+  /* display: flex;
+  flex-direction: column;
+  gap: 1rem; */
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .headerContainer a:hover {
     background-color: rgb(64, 64, 64);
   }
+}
+
+/* Tablets and larger */
+@media (max-width: 768px) {
+  /* Styles for tablets */
+  .hamburgerMenu {
+    display: block;
+  }
+  .navLinks {
+    display: none;
+  }
+  .headerContainer {
+    padding: 1rem;
+  }
+  .quickActions p {
+    font-size: var(--small-text-size);
+    color: var(--subtext-color);
+  }
+}
+
+/* Laptops and larger */
+@media (max-width: 1024px) {
+  /* Styles for laptops and small desktops */
 }
