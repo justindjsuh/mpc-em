@@ -5,11 +5,14 @@
 
   --font-color-dark: #262626;
   --font-color-light: #fafafa;
+  --subtext-color: #a2a8b3;
+
   --header1-size: 4rem;
   --header2-size: 2.25rem;
   --header3-size: 1.5rem;
   --header4-size: 1.25rem;
   --text-size: 1rem;
+  --small-text-size: 0.875rem;
 
   --border-radius: 10px;
 }

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import styles from './Button.module.css';
 
-type IButtonProps = {
+interface IButtonProps {
   text: string;
   onClick: () => void;
   theme: 'light' | 'dark';
