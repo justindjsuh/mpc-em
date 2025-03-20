@@ -1,6 +1,9 @@
 .ministriesContainer {
   background-color: var(--bg-light);
-  padding: 4rem 7rem;
+}
+
+.ministryHeader {
+  padding: 4rem 7rem 3rem 7rem;
 }
 
 .ministryHeader p {
@@ -10,4 +13,53 @@
 
 .ministryHeader h3 {
   font-size: var(--header2-size);
+}
+
+.ministryContent {
+  background-image: url('/ministries_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 4rem 2rem;
+  gap: 3rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ministryCard {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+  width: 25%;
+  border-radius: 10px;
+}
+
+.cardHeader {
+  font-size: var(--header3-size);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .ministryHeader {
+    padding-left: 2rem;
+  }
+  .ministryContent {
+    flex-direction: column;
+  }
+  .ministryCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
 }
