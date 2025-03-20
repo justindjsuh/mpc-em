@@ -2,6 +2,14 @@
   height: 100vh;
   width: 100%;
   background: linear-gradient(to bottom, #262626 0%, #262626 80%, #fafafa 80%, #fafafa 100%);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.page img {
+  border-radius: 10px;
+  height: auto;
 }
 
 /* Enable hover only on non-touch devices */
@@ -22,6 +30,14 @@
   } */
 }
 
-@media (max-width: 600px) {
-  /* test */
+/* Tablets and larger */
+@media (max-width: 768px) {
+  .page {
+    padding: 0;
+  }
+}
+
+/* Laptops and larger */
+@media (max-width: 1024px) {
+  /* Styles for laptops and small desktops */
 }

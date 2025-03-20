@@ -49,7 +49,7 @@
 .navDropdownBot {
   width: 100%;
   backdrop-filter: blur(10px);
-  background-color: var(--bg-light);
+  background-color: var(--bg-dark);
 }
 
 .navDropdownTop {
@@ -67,12 +67,14 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: var(--font-color-light);
 }
 
 .navSpecificActions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: var(--font-color-light);
 }
 
 .navSpecificActions {
@@ -100,7 +102,7 @@
   bottom: 0;
   left: 0;
   height: 45%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(38, 38, 38, 0.2);
 }
 
 .hamburgerMenu {
@@ -113,17 +115,49 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: var(--bg-light);
+  background-color: rgba(38, 38, 38, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   backdrop-filter: blur(20px);
+  padding: 0 2rem;
 }
 
-.navSpecificActionsMobile {
-  /* display: flex;
+.quickActionsMobile {
+  display: flex;
   flex-direction: column;
-  gap: 1rem; */
+  gap: 0.5rem;
+}
+
+.quickActionsMobile a {
+  font-size: var(--header2-size);
+  font-weight: 700;
+  pointer-events: auto;
+  color: var(--bg-light);
+}
+
+.quickActionsMobile p {
+  font-size: var(--small-text-size);
+  color: var(--subtext-color);
+}
+
+.quickActionsMobile2 {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quickActionsMobile2 div {
+  font-size: var(--header2-size);
+  font-weight: 700;
+  pointer-events: auto;
+  color: var(--bg-light);
+}
+
+.quickActionsMobile2 p {
+  font-size: var(--small-text-size);
+  color: var(--subtext-color);
 }
 
 /* Enable hover only on non-touch devices */
@@ -145,9 +179,8 @@
   .headerContainer {
     padding: 1rem;
   }
-  .quickActions p {
-    font-size: var(--small-text-size);
-    color: var(--subtext-color);
+  .headerContainer a {
+    display: none;
   }
 }
 
