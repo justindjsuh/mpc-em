@@ -78,6 +78,11 @@
   flex-direction: column;
 }
 
+.detailDescription > p {
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
 .detailsSubText {
   display: flex;
   flex-direction: column;

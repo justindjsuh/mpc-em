@@ -1,0 +1,13 @@
+.ministriesContainer {
+  background-color: var(--bg-light);
+  padding: 4rem 7rem;
+}
+
+.ministryHeader p {
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.ministryHeader h3 {
+  font-size: var(--header2-size);
+}
