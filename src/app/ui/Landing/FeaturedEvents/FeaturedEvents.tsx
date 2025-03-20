@@ -32,8 +32,8 @@ const FeaturedEvents: React.FC = () => {
         className={styles.eventsHeader}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       >
         <p>JOIN US</p>
         <h3>Featured Events</h3>
@@ -42,8 +42,8 @@ const FeaturedEvents: React.FC = () => {
         className={styles.eventCardContainer}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       >
         {data.map((event) => {
           const { startDate, endDate } = convertDatesIntoReadable(event.start_date, event.end_date);
@@ -74,8 +74,8 @@ const FeaturedEvents: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.35, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       >
         <Button text="View All Events" theme="dark" iconTheme="dark" onClick={handleNavigation} />
       </motion.div>

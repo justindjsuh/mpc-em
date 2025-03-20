@@ -16,8 +16,8 @@ const Ministries: React.FC = () => {
         className={styles.ministryHeader}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       >
         <p>CONNECT</p>
         <h3>Ministries</h3>
@@ -27,8 +27,8 @@ const Ministries: React.FC = () => {
           className={styles.ministryCard}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 1 }}
         >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Weekly Bible Study</p>
@@ -45,8 +45,8 @@ const Ministries: React.FC = () => {
           className={styles.ministryCard}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 1 }}
         >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Family Groups</p>
@@ -63,8 +63,8 @@ const Ministries: React.FC = () => {
           className={styles.ministryCard}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 1 }}
         >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Get Connected</p>

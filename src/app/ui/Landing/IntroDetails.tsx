@@ -11,7 +11,7 @@ const IntroDetails: React.FC = () => {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 1 }}
       >
         <p>VISIT</p>
         <div className={styles.detailsContainer}>
@@ -28,15 +28,15 @@ const IntroDetails: React.FC = () => {
         className={styles.divider}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.15, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       />
       <motion.div
         className={styles.serviceTimes}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 1 }}
       >
         <div className={styles.serviceDetails}>
           <div className={styles.onlineDetailsContainer}>

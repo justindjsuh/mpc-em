@@ -18,7 +18,7 @@ const HeroView: React.FC = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
-        style={{ position: 'absolute', top: '30%', left: '0', transform: 'translate(-50%, -50%)' }}
+        style={{ position: 'absolute', top: '30%', left: '0', transform: 'translate(-50%, -50%)', zIndex: 1 }}
       >
         <h1>MONTGOMERY PRESBYTERIAN CHURCH</h1>
         <p className={styles.heroDesc}>A community of Christ-followers.</p>
@@ -34,15 +34,16 @@ const HeroView: React.FC = () => {
           />
         </div>
       </motion.div>
-      <Image
-        src="/landing_church.png"
-        alt="an interior of the church chapel"
-        sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
-        width={1300}
-        height={800}
-        style={{ objectFit: 'cover' }}
-        priority
-      />
+      <div className={styles.imgContainer}>
+        <Image
+          src="/landing_church.png"
+          alt="an interior of the church chapel"
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
+          style={{ objectFit: 'cover' }}
+          fetchPriority="high"
+          fill
+        />
+      </div>
     </div>
   );
 };
