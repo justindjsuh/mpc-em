@@ -1,0 +1,90 @@
+.eventsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-light);
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+.eventsHeader {
+  align-self: flex-start;
+  padding: 4rem 7rem 0rem 7rem;
+}
+
+.eventsHeader p {
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.eventsHeader h3 {
+  font-size: var(--header2-size);
+}
+
+.eventCardContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.eventCard {
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 5px 1px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eventImgContainer {
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.eventImgContainer img {
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--subtext-color);
+}
+
+.eventDate {
+  font-size: var(--small-text-size);
+  color: var(--event-subtext-color);
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+}
+
+.eventName {
+  font-size: var(--text-size);
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .eventsContainer {
+    padding: 1rem;
+  }
+  .eventCardContainer {
+    flex-direction: column;
+  }
+  .eventImgContainer {
+    width: 350px;
+    height: auto;
+  }
+  .eventsHeader {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+}

@@ -1,5 +1,6 @@
 'use client';
 import styles from './page.module.css';
+import FeaturedEvents from './ui/Landing/FeaturedEvents/FeaturedEvents';
 import HeroView from './ui/Landing/HeroView';
 import IntroDetails from './ui/Landing/IntroDetails';
 import Ministries from './ui/Landing/Ministries/Ministries';
@@ -18,6 +19,7 @@ export default function Home() {
         <p className={styles.desktopDetails}>3260 Morris Rd, Lansdale, PA 19446</p>
       </div>
       <Ministries />
+      <FeaturedEvents />
     </Layout>
   );
 }
