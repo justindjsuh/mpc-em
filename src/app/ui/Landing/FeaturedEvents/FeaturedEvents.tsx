@@ -1,5 +1,6 @@
 import type { EventsApiResponse } from '@/app/lib/definitions';
 import { convertDatesIntoReadable } from '@/app/lib/utils';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -27,11 +28,23 @@ const FeaturedEvents: React.FC = () => {
 
   return (
     <div className={styles.eventsContainer}>
-      <div className={styles.eventsHeader}>
+      <motion.div
+        className={styles.eventsHeader}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <p>JOIN US</p>
         <h3>Featured Events</h3>
-      </div>
-      <div className={styles.eventCardContainer}>
+      </motion.div>
+      <motion.div
+        className={styles.eventCardContainer}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         {data.map((event) => {
           const { startDate, endDate } = convertDatesIntoReadable(event.start_date, event.end_date);
           return (
@@ -57,8 +70,15 @@ const FeaturedEvents: React.FC = () => {
             </Link>
           );
         })}
-      </div>
-      <Button text="View All Events" theme="dark" iconTheme="dark" onClick={handleNavigation} />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        <Button text="View All Events" theme="dark" iconTheme="dark" onClick={handleNavigation} />
+      </motion.div>
     </div>
   );
 };
