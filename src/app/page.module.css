@@ -5,11 +5,41 @@
   display: flex;
   justify-content: center;
   padding: 2rem;
+  position: relative;
 }
 
 .page img {
   border-radius: 10px;
   height: auto;
+}
+
+.heroTitle {
+  color: var(--font-color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.heroTitle h1 {
+  font-size: var(--headder4-size);
+  letter-spacing: 0.15rem;
+}
+
+.heroDesc {
+  font-size: var(--header1-size);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.heroDesc2 {
+  font-size: var(--header4-size);
+  font-weight: 500;
+}
+
+.serviceTime {
+  margin: 0.2rem 0 1rem 0;
 }
 
 /* Enable hover only on non-touch devices */
@@ -34,6 +64,14 @@
 @media (max-width: 768px) {
   .page {
     padding: 0;
+  }
+  .heroTitle h1 {
+    font-size: var(--small-text-size);
+  }
+  .heroDesc {
+    text-align: center;
+    white-space: wrap;
+    font-size: var(--header-hero-size);
   }
 }
 

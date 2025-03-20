@@ -63,7 +63,7 @@ const Header: React.FunctionComponent = () => {
 
   return (
     <>
-      <div
+      <motion.div
         className={styles.headerContainer}
         onMouseLeave={() => setNavigated((prev) => {
           return { ...prev, navbar: true };
@@ -71,6 +71,9 @@ const Header: React.FunctionComponent = () => {
         onMouseEnter={() => setNavigated((prev) => {
           return { ...prev, navbar: false };
         })}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
       >
         <div className={styles.headerLeft}>
           <Image
@@ -121,8 +124,8 @@ const Header: React.FunctionComponent = () => {
             setMobileMenuOpen={setMobileMenuOpen}
           />
         </div>
-      </div>
-      <AnimatePresence mode="wait">
+      </motion.div>
+      <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             className={styles.mobileMenuDropdown}
@@ -130,31 +133,23 @@ const Header: React.FunctionComponent = () => {
             animate={{ height: '101vh' }}
             exit={{ height: '0vh' }}
             transition={{
-              height: {
-                duration: 0.7, // Total duration of the animation
-                ease: [0.7, 0.01, 0.5, 1], // Custom cubic bezier for a natural feel
-                times: [0, 0.1, 1], // Control the animation flow over time (0 = start, 1 = end)
-                // Example: First 30% is slow, last 70% is faster
-              },
-              opacity: {
-                duration: 0.8, // Duration for fade in
-                delay: 0.5, // Delay opacity until height animation has started
-              },
-              backdropFilter: {
-                duration: 0.3,
-                ease: 'easeInOut',
-              },
+              duration: 0.7,
+              ease: [0.7, 0.01, 0.5, 1],
+              times: [0, 0.1, 1],
             }}
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" propagate>
               {step === 1
                 ? (
                     <motion.div
                       key="step-1"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.3, ease: 'easeOut' },
+                      }}
+                      transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
                       <div className={styles.quickActionsMobile}>
                         <MobileQuickLinks />
@@ -175,7 +170,6 @@ const Header: React.FunctionComponent = () => {
                           exit={{ x: -20, opacity: 0 }}
                           transition={{ duration: 0.2, ease: 'easeOut' }}
                         >
-
                           <Image
                             src="/chevron-left.svg"
                             alt="left chevron"
@@ -189,7 +183,7 @@ const Header: React.FunctionComponent = () => {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
                         <div className={styles.quickActionsMobile}>
                           {mobileNavMenuMap[activePath]}
@@ -200,6 +194,7 @@ const Header: React.FunctionComponent = () => {
             </AnimatePresence>
           </motion.div>
         )}
+
         {(navTriggered.triggered && !navigatedOut) && (
           <MainDropdown setNavigated={setNavigated} navTriggered={navTriggered} />
         )}

@@ -16,7 +16,7 @@
   font-size: 1rem;
   font-weight: 600;
   transform: translateY(1px);
-  font-color: inherit;
+  color: inherit;
 }
 
 .buttonWrapper img {
@@ -24,8 +24,9 @@
 }
 
 .filled {
-  background: var(--bg-white);
-  border-color: var(--bg-white);
+  background-color: var(--bg-light);
+  border-color: var(--bg-light);
+  color: var(--font-color-dark);
 }
 
 .dark {
