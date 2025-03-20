@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from '../../page.module.css';
 import Button from '../Button/Button';
@@ -5,7 +6,13 @@ import Button from '../Button/Button';
 const IntroDetails: React.FC = () => {
   return (
     <div className={styles.churchIntroDetails}>
-      <div className={styles.detailDescription}>
+      <motion.div
+        className={styles.detailDescription}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <p>VISIT</p>
         <div className={styles.detailsContainer}>
           <div className={styles.detailsMainText}>
@@ -16,9 +23,21 @@ const IntroDetails: React.FC = () => {
             <Button text="Plan Your Visit" onClick={() => {}} theme="dark" iconTheme="dark" />
           </div>
         </div>
-      </div>
-      <hr className={styles.divider} />
-      <div className={styles.serviceTimes}>
+      </motion.div>
+      <motion.hr
+        className={styles.divider}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      />
+      <motion.div
+        className={styles.serviceTimes}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <div className={styles.serviceDetails}>
           <div className={styles.onlineDetailsContainer}>
             <p className={styles.serviceType}>ONLINE</p>
@@ -53,7 +72,7 @@ const IntroDetails: React.FC = () => {
             <span>AM</span>
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

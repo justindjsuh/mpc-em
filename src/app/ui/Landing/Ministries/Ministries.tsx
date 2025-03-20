@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Button from '../../Button/Button';
 import styles from './Ministries.module.css';
@@ -11,12 +12,24 @@ const Ministries: React.FC = () => {
 
   return (
     <div className={styles.ministriesContainer}>
-      <div className={styles.ministryHeader}>
+      <motion.div
+        className={styles.ministryHeader}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <p>CONNECT</p>
         <h3>Ministries</h3>
-      </div>
+      </motion.div>
       <div className={styles.ministryContent}>
-        <div className={styles.ministryCard}>
+        <motion.div
+          className={styles.ministryCard}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Weekly Bible Study</p>
             <p>Join us for our weekly Bible study on Wednesdays at 7:30 PM in the church library!</p>
@@ -27,8 +40,14 @@ const Ministries: React.FC = () => {
             iconTheme="dark"
             onClick={() => handleNavigation('em-ministries')}
           />
-        </div>
-        <div className={styles.ministryCard}>
+        </motion.div>
+        <motion.div
+          className={styles.ministryCard}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Family Groups</p>
             <p>Enjoy fellowship with brothers and sisters in the same stage of life!</p>
@@ -39,8 +58,14 @@ const Ministries: React.FC = () => {
             iconTheme="dark"
             onClick={() => handleNavigation('em-ministries')}
           />
-        </div>
-        <div className={styles.ministryCard}>
+        </motion.div>
+        <motion.div
+          className={styles.ministryCard}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className={styles.cardContainer}>
             <p className={styles.cardHeader}>Get Connected</p>
             <p>Want to engage with the leaders of our community and get plugged in? Get connected!</p>
@@ -51,7 +76,7 @@ const Ministries: React.FC = () => {
             iconTheme="dark"
             onClick={() => handleNavigation('get-connected')}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
