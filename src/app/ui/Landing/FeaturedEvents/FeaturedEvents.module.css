@@ -73,6 +73,7 @@
 @media (max-width: 768px) {
   .eventsContainer {
     padding: 1rem;
+    padding-bottom: 8rem;
   }
   .eventCardContainer {
     flex-direction: column;
