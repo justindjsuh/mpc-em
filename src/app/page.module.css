@@ -231,6 +231,9 @@
   .desktopDetails {
     display: none;
   }
+  .imgContainer {
+    width: 100vw;
+  }
 }
 
 /* Laptops and larger */

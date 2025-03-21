@@ -38,7 +38,6 @@ const HeroView: React.FC = () => {
         <Image
           src="/landing_church.avif"
           alt="an interior of the church chapel"
-          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
           style={{ objectFit: 'cover' }}
           priority
           fill
