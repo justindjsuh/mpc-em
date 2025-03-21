@@ -16,9 +16,16 @@
   font-size: var(--header2-size);
 }
 
+.youtubeContainer {
+  width: 500px;
+  height: 350px;
+  position: relative;
+}
+
 .youtubeContainer img {
   border-radius: 10px;
   transform: translateY(-15%);
+  object-fit: cover;
   box-shadow:
     0 2px 15px 3px rgba(0, 0, 0, 0.1),
     0 1px 13px 3px rgba(0, 0, 0, 0.08);
@@ -44,6 +51,9 @@
   }
   .sermonText {
     width: 90%;
+  }
+  .youtubeContainer {
+    width: 100vw;
   }
 }
 

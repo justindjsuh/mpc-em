@@ -43,7 +43,7 @@ const FeaturedEvents: React.FC = () => {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         {data.map((event) => {
           const { startDate, endDate } = convertDatesIntoReadable(event.start_date, event.end_date);

@@ -39,8 +39,7 @@ const RecentSermon: React.FC = () => {
           <Image
             alt="Latest Sermon Thumbnail"
             src="/youtube_img.png"
-            width={500}
-            height={350}
+            fill
           />
         </motion.a>
       </div>
