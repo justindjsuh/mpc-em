@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Button from '../../Button/Button';
 import styles from './NewsletterSignup.module.css';
 
 const NewsletterSignup: React.FC = () => {
+  const [email, setEmail] = useState('');
+
+  const handleEmailUpdate = (value: string) => {
+    setEmail(value);
+    return email;
+  };
+
   const handleNewsletterOnclick = () => {
   };
 
@@ -26,11 +34,12 @@ const NewsletterSignup: React.FC = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           viewport={{ once: true, amount: 1 }}
         >
-          <input type="text" placeholder="Email Address"></input>
+          <input type="text" placeholder="Email Address" onChange={e => handleEmailUpdate(e.target.value)} />
           <Button
             text="Sign Up"
             iconTheme="dark"
             theme="dark"
+            isDisabled
             onClick={handleNewsletterOnclick}
           />
         </motion.div>

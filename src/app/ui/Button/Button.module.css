@@ -34,9 +34,14 @@
   color: var(--font-color-dark);
 }
 
+.disabledBtn {
+  border: 2px solid var(--subtext-color);
+  color: var(--subtext-color);
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  .buttonWrapper:hover img {
+  .hoverAnimation:hover img {
     transform: translate(10%, -10%);
   }
 }

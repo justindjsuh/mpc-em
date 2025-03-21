@@ -38,9 +38,9 @@ const RecentSermon: React.FC = () => {
         >
           <Image
             alt="Latest Sermon Thumbnail"
-            src={sermon ? sermon?.snippet.thumbnails.high.url : '/logo-dark.png'}
-            width={sermon ? sermon?.snippet.thumbnails.high.width : 175}
-            height={sermon ? sermon?.snippet.thumbnails.high.height : 58}
+            src="/youtube_img.png"
+            width={500}
+            height={350}
           />
         </motion.a>
       </div>
