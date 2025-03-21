@@ -1,0 +1,101 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerContentContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem 0 5rem;
+}
+
+.footerContent {
+  display: flex;
+  gap: 6rem;
+}
+
+.copyrightBar {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  width: 100%;
+  background-color: #d4baec;
+  font-size: 0.75rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  color: var(--font-color-light);
+  gap: 0.75rem;
+}
+
+.col1 {
+  justify-content: space-between;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.col p {
+  font-size: var(--header4-size);
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+.col a {
+  font-size: var(--small-text-size);
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  margin: 3rem 0;
+  height: 1px;
+  color: var(--divider-color);
+  background: var(--divider-color);
+  font-size: 0;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .sermonsContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+  .sermonText {
+    width: 90%;
+  }
+}
+
+/* Laptops and larger */
+@media (max-width: 1024px) {
+  /* Styles for laptops and small desktops */
+  .col {
+    display: none;
+  }
+  .col1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+  .copyrightBar {
+    font-size: 0.55rem;
+  }
+  .footerContentContainer {
+    padding: 2rem;
+  }
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Styles for laptops and small desktops */
+  .footerContent {
+    gap: 3rem;
+  }
+}
