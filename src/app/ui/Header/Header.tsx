@@ -13,7 +13,7 @@ export interface INavTriggeredState {
   lastVisited: string;
 }
 
-export type IActivePathOptions = 'newcomers' | 'about' | 'ministries' | 'media' | 'resources';
+export type IActivePathOptions = 'newcomers' | 'about' | 'ministries' | 'media' | 'churchLife';
 
 const Header: React.FunctionComponent = () => {
   // General States
@@ -79,10 +79,9 @@ const Header: React.FunctionComponent = () => {
           <Image
             aria-hidden
             src="/logo-white.png"
-            alt="Arrow Facing Top Right"
+            alt="MPC logo"
             width={175}
             height={58}
-            priority
           />
           <div className={styles.navLinks}>
             <div
@@ -113,7 +112,7 @@ const Header: React.FunctionComponent = () => {
               className={styles.navLink}
               onMouseEnter={() => handleMouseEnter('events')}
             >
-              Events
+              Church Life
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import type { INavTriggeredState } from '../../Header';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from '../../Header.module.css';
-import { AboutNav, MediaNav, MinistriesNav, NewcomerNav, ResourcesNav } from '../MainNavOptions/MainNavOptions';
+import { AboutNav, ChurchLifeNav, MediaNav, MinistriesNav, NewcomerNav } from '../MainNavOptions/MainNavOptions';
 
 interface IMainDropdownProps {
   setNavigated: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
@@ -80,7 +80,7 @@ const MainDropdown: React.FC<IMainDropdownProps> = ({
             {navTriggered.lastVisited === 'about' && AboutNav}
             {navTriggered.lastVisited === 'ministries' && MinistriesNav}
             {navTriggered.lastVisited === 'media' && MediaNav}
-            {navTriggered.lastVisited === 'events' && ResourcesNav}
+            {navTriggered.lastVisited === 'events' && ChurchLifeNav}
           </div>
         </div>
       </motion.div>

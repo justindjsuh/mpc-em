@@ -109,9 +109,9 @@ export const MobileMenuHome: React.FC<IMobileMenuHomeProps> = ({ handleMobileNav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.64, duration: 0.3, ease: 'easeOut' } }}
         exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
-        onClick={() => handleMobileNavClick('resources')}
+        onClick={() => handleMobileNavClick('churchLife')}
       >
-        <div>Resources</div>
+        <div>Church Life</div>
       </motion.div>
     </>
   );
@@ -161,10 +161,10 @@ export const MediaMobileNav: React.FC = () => {
   );
 };
 
-export const ResourcesMobileNav: React.FC = () => {
+export const ChurchLifeMobileNav: React.FC = () => {
   return (
     <>
-      <p>Resources</p>
+      <p>Church Life</p>
       <Link href="/events">Events</Link>
       <Link href="/newsletter">Newsletter</Link>
     </>

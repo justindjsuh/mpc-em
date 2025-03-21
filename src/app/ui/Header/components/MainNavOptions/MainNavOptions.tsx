@@ -133,7 +133,7 @@ export const MediaNav = (
   </>
 );
 
-export const ResourcesNav = (
+export const ChurchLifeNav = (
   <>
     <motion.p
       initial={{ opacity: 0 }}
