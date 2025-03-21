@@ -39,13 +39,11 @@ const Header: React.FunctionComponent = () => {
   }, [navigatedOut]);
 
   useEffect(() => {
-    // if (mobileMenuOpen) {
-    //   document.documentElement.style.overflow = 'hidden';
-    //   document.body.style.overflow = 'hidden';
-    // } else {
-    //   document.documentElement.style.overflow = '';
-    //   document.body.style.overflow = '';
-    // }
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
     if (!mobileMenuOpen) {
       setStep(1);
     }
