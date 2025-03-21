@@ -53,3 +53,10 @@ a {
     overflow-x: visible;
   }
 }
+
+@media (max-width: 1024px) {
+  html,
+  body {
+    overflow-x: visible;
+  }
+}

@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import Button from '../../Button/Button';
 import styles from './FeaturedEvents.module.css';
 
+const eventCardWidth = 400;
+
 const FeaturedEvents: React.FC = () => {
   const [data, setData] = useState<EventsApiResponse[]>([]);
   const router = useRouter();
@@ -16,14 +18,19 @@ const FeaturedEvents: React.FC = () => {
     router.push('/events');
   };
 
-  const fetchEvents = async () => {
+  const fetchEvents = async (count: number) => {
     const res = await fetch('/api/events');
     const data = await res.json();
-    setData(data.slice(0, 3));
+    setData(data.slice(0, count));
   };
 
   useEffect(() => {
-    fetchEvents();
+    const width = window.innerWidth;
+    if (width <= 768) {
+      fetchEvents(3);
+    } else {
+      fetchEvents(Math.floor(width / eventCardWidth));
+    }
   }, []);
 
   return (

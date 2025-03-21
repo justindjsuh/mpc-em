@@ -194,4 +194,22 @@
 /* Laptops and larger */
 @media (max-width: 1024px) {
   /* Styles for laptops and small desktops */
+  .hamburgerMenu {
+    display: block;
+    position: fixed;
+    top: 3%;
+    right: 5%;
+    z-index: 101;
+  }
+  .navLinks {
+    display: none;
+  }
+  .headerContainer {
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+  }
+  .headerContainer a {
+    display: none;
+  }
 }

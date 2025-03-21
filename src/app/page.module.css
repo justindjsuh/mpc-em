@@ -239,4 +239,17 @@
 /* Laptops and larger */
 @media (max-width: 1024px) {
   /* Styles for laptops and small desktops */
+  .imgContainer {
+    width: 100vw;
+  }
+  .heroDesc {
+    font-size: var(--header-hero-size);
+  }
+  .churchIntroDetails {
+    height: auto;
+    padding: 4rem;
+  }
+  .serviceType {
+    font-size: var(--header3-size);
+  }
 }

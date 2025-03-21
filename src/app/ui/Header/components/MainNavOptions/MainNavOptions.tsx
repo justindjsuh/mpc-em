@@ -8,7 +8,7 @@ export const NewcomerNav = (
       animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' } }}
       exit={{ opacity: 0, transition: { delay: 0.06, duration: 0.15, ease: 'easeOut' } }}
     >
-      Navigation
+      Newcomers
     </motion.p>
     <motion.div
       initial={{ opacity: 0 }}
@@ -34,7 +34,7 @@ export const AboutNav = (
       animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' } }}
       exit={{ opacity: 0, transition: { delay: 0.12, duration: 0.15, ease: 'easeOut' } }}
     >
-      Navigation
+      About Us
     </motion.p>
     <motion.div
       initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export const MinistriesNav = (
       animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' } }}
       exit={{ opacity: 0, transition: { delay: 0.12, duration: 0.15, ease: 'easeOut' } }}
     >
-      Navigation
+      Ministries
     </motion.p>
     <motion.div
       initial={{ opacity: 0 }}
@@ -114,7 +114,7 @@ export const MediaNav = (
       animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' } }}
       exit={{ opacity: 0, transition: { delay: 0.06, duration: 0.15, ease: 'easeOut' } }}
     >
-      Navigation
+      Media
     </motion.p>
     <motion.div
       initial={{ opacity: 0 }}
@@ -140,7 +140,7 @@ export const ChurchLifeNav = (
       animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' } }}
       exit={{ opacity: 0, transition: { delay: 0.06, duration: 0.15, ease: 'easeOut' } }}
     >
-      Navigation
+      Church Life
     </motion.p>
     <motion.div
       initial={{ opacity: 0 }}
