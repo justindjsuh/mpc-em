@@ -4,7 +4,7 @@
   align-items: center;
   background-color: var(--bg-light);
   gap: 3rem;
-  padding-bottom: 4rem;
+  padding-bottom: 10rem;
 }
 
 .eventsHeader {
@@ -13,6 +13,7 @@
 }
 
 .eventsHeader p {
+  font-weight: 500;
   margin-bottom: 0.5rem;
   letter-spacing: 0.1rem;
 }

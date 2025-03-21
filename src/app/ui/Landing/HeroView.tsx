@@ -40,7 +40,7 @@ const HeroView: React.FC = () => {
           alt="an interior of the church chapel"
           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
           style={{ objectFit: 'cover' }}
-          fetchPriority="high"
+          priority
           fill
         />
       </div>

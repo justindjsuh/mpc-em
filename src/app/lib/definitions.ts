@@ -14,3 +14,27 @@ export interface EventsApiResponse {
   image_url: string;
   liinks: EventLinks[];
 };
+
+interface YoutubeThumbnails {
+  default: { url: string; width: number; height: number };
+  high: { url: string; width: number; height: number };
+  medium: { url: string; width: number; height: number };
+}
+
+export interface YoutubeSnippet {
+  channelId: string;
+  channelTitle: string;
+  description: string;
+  liveBroadcastContent: string;
+  publishTime: Date;
+  publishedAt: Date;
+  thumbnails: YoutubeThumbnails;
+  title: string;
+}
+
+export interface YoutubeVideo {
+  etag: string;
+  id: { kind: string; videoId: string };
+  kind: string;
+  snippet: YoutubeSnippet;
+}

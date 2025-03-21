@@ -5,6 +5,7 @@ import FeaturedEvents from './ui/Landing/FeaturedEvents/FeaturedEvents';
 import HeroView from './ui/Landing/HeroView';
 import IntroDetails from './ui/Landing/IntroDetails';
 import Ministries from './ui/Landing/Ministries/Ministries';
+import RecentSermon from './ui/Landing/RecentSermon/RecentSermon';
 import Layout from './ui/Layout/Layout';
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         </div>
         <Ministries />
         <FeaturedEvents />
+        <RecentSermon />
       </Layout>
     </>
   );
