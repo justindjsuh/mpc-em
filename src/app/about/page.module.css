@@ -1,0 +1,158 @@
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.aboutHeaderContainer {
+  color: var(--font-color-light);
+  padding: 4rem 0;
+}
+
+.aboutHeaderContainer p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.container2 {
+  flex-direction: column;
+  background-color: var(--bg-light);
+  align-items: center;
+}
+
+.aboutHeaderContainer h3 {
+  font-size: var(--header-hero-size);
+}
+
+.ourStoryContainer {
+  display: flex;
+  padding: 5rem 0 12rem 0;
+  /* background-color: var(--bg-light); */
+}
+
+.ourStoryContainer h3 {
+  font-size: var(--header-hero-size);
+  flex: 1;
+}
+
+.ourStoryContainer p {
+  flex: 1;
+}
+
+.ourMissionContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-dark);
+  color: var(--font-color-light);
+  width: 80%;
+  height: 40vh;
+  /* padding: 4rem 0; */
+  gap: 7rem;
+}
+
+.imgContainer {
+  flex-shrink: 0;
+  position: relative;
+  width: 528px;
+  height: 528px;
+  z-index: 2;
+}
+
+.imgContainer img {
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.ourMissionTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ourMissionTextContainer h3 {
+  font-size: var(--header-hero-size);
+  flex: 1;
+}
+
+.ourMissionTextContainer p {
+  flex: 1;
+}
+
+.ourBeliefsContainer {
+  background-color: var(--bg-light);
+}
+
+.beliefsContainer {
+  display: flex;
+  padding: 12rem 0 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.beliefsContainer h3 {
+  font-size: var(--header-hero-size);
+  flex: 1;
+}
+
+.beliefsContainer p {
+  flex: 1;
+}
+
+.beliefsText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+@media (max-width: 1200px) {
+  .ourMissionContainer {
+    width: 90%;
+    gap: 3rem;
+    height: 30vh;
+  }
+  .aboutContainer {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .ourStoryContainer {
+    flex-direction: column;
+    padding-bottom: 7rem;
+  }
+  .ourMissionContainer {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    width: 90%;
+    padding-bottom: 4rem;
+  }
+  .beliefsContainer {
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+  .beliefsText {
+    width: 100%;
+  }
+  .imgContainer {
+    width: 90vw;
+  }
+  .imgContainer img {
+    transform: translateY(-10%);
+  }
+  .aboutContainer {
+    width: 90%;
+  }
+}
