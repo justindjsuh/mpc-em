@@ -2,6 +2,7 @@ import type { IActivePathOptions } from '../../Header';
 import type { INavProps } from '../MainNavOptions/MainNavOptions';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const MobileQuickLinks: React.FC<INavProps> = ({ handleNavClick }) => {
   return (
@@ -118,7 +119,15 @@ export const MobileMenuHome: React.FC<IMobileMenuHomeProps> = ({ handleMobileNav
   );
 };
 
-export const NewcomerMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
+export const NewcomerMobileNav: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
   return (
     <>
       <p>Newcomers</p>
@@ -128,7 +137,16 @@ export const NewcomerMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
   );
 };
 
-export const AboutMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
+export const AboutMobileNav: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
     <>
       <p>About Us</p>
@@ -140,7 +158,16 @@ export const AboutMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
   );
 };
 
-export const MinistriesMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
+export const MinistriesMobileNav: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
     <>
       <p>Ministries</p>
@@ -152,7 +179,16 @@ export const MinistriesMobileNav: React.FC<INavProps> = ({ handleNavClick }) => 
   );
 };
 
-export const MediaMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
+export const MediaMobileNav: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
     <>
       <p>Media</p>
@@ -162,7 +198,16 @@ export const MediaMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
   );
 };
 
-export const ChurchLifeMobileNav: React.FC<INavProps> = ({ handleNavClick }) => {
+export const ChurchLifeMobileNav: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
     <>
       <p>Church Life</p>
