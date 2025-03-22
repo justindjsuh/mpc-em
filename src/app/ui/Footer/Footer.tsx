@@ -14,6 +14,7 @@ const Footer: React.FC = () => {
               alt="MPC logo"
               width={175}
               height={58}
+              priority
             />
             <div className={styles.socials}>
               <a href="https://www.instagram.com/mpc.em/">
