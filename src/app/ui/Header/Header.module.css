@@ -61,7 +61,6 @@
   display: flex;
   padding: 2rem 0rem;
   gap: 5rem;
-  pointer-events: none;
 }
 
 .quickActions {
@@ -84,7 +83,6 @@
 
 .navSpecificActions a {
   font-weight: 600;
-  pointer-events: auto;
 }
 
 .expandedNav p {
@@ -95,7 +93,6 @@
 .quickActions a {
   font-size: var(--header3-size);
   font-weight: 700;
-  pointer-events: auto;
 }
 
 .navDropdownBot {
@@ -133,7 +130,6 @@
 .quickActionsMobile a {
   font-size: var(--header2-size);
   font-weight: 700;
-  pointer-events: auto;
   color: var(--bg-light);
 }
 
@@ -152,7 +148,6 @@
 .quickActionsMobile2 div {
   font-size: var(--header2-size);
   font-weight: 700;
-  pointer-events: auto;
   color: var(--bg-light);
 }
 

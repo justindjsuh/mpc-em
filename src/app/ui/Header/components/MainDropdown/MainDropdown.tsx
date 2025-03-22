@@ -1,6 +1,7 @@
 import type { INavTriggeredState } from '../../Header';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from '../../Header.module.css';
 import { AboutNav, ChurchLifeNav, MediaNav, MinistriesNav, NewcomerNav } from '../MainNavOptions/MainNavOptions';
 
@@ -13,6 +14,15 @@ const MainDropdown: React.FC<IMainDropdownProps> = ({
   setNavigated,
   navTriggered,
 }) => {
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
     <div className={styles.navDropdownContainer}>
       <motion.div
@@ -43,7 +53,7 @@ const MainDropdown: React.FC<IMainDropdownProps> = ({
               animate={{ opacity: 1, transition: { delay: 0.05, duration: 0.3, ease: 'easeOut' } }}
               exit={{ opacity: 0, transition: { delay: 0.12, duration: 0.15, ease: 'easeOut' } }}
             >
-              <Link href="/get-connected">Get Connected</Link>
+              <Link href={{ pathname: '/get-connected', query: { t: Date.now() } }}>Get Connected</Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -76,11 +86,11 @@ const MainDropdown: React.FC<IMainDropdownProps> = ({
             </motion.div>
           </div>
           <div className={styles.navSpecificActions}>
-            {navTriggered.lastVisited === 'newcomers' && NewcomerNav}
-            {navTriggered.lastVisited === 'about' && AboutNav}
-            {navTriggered.lastVisited === 'ministries' && MinistriesNav}
-            {navTriggered.lastVisited === 'media' && MediaNav}
-            {navTriggered.lastVisited === 'events' && ChurchLifeNav}
+            {navTriggered.lastVisited === 'newcomers' && <NewcomerNav handleNavClick={handleNavClick} />}
+            {navTriggered.lastVisited === 'about' && <AboutNav handleNavClick={handleNavClick} />}
+            {navTriggered.lastVisited === 'ministries' && <MinistriesNav handleNavClick={handleNavClick} />}
+            {navTriggered.lastVisited === 'media' && <MediaNav handleNavClick={handleNavClick} />}
+            {navTriggered.lastVisited === 'events' && <ChurchLifeNav handleNavClick={handleNavClick} />}
           </div>
         </div>
       </motion.div>

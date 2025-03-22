@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import HamburgerMenu from './components/HamburgerMenu/HamburgerMenu';
 import MainDropdown from './components/MainDropdown/MainDropdown';
@@ -25,6 +26,8 @@ const Header: React.FunctionComponent = () => {
   const [activePath, setActivePath] = useState<IActivePathOptions>('newcomers');
 
   const navigatedOut = Object.values(navigated).every(Boolean);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleMouseEnter = (item: string) => {
     setTimeout(() => {
@@ -59,6 +62,17 @@ const Header: React.FunctionComponent = () => {
     setActivePath('newcomers');
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (pathname === path) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
+  const handleHomeNav = () => {
+    router.push('/');
+  };
+
   return (
     <>
       <motion.div
@@ -80,6 +94,8 @@ const Header: React.FunctionComponent = () => {
             alt="MPC logo"
             width={175}
             height={58}
+            onClick={handleHomeNav}
+            priority
           />
           <div className={styles.navLinks}>
             <div
@@ -149,7 +165,7 @@ const Header: React.FunctionComponent = () => {
                       transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
                       <div className={styles.quickActionsMobile}>
-                        <MobileQuickLinks />
+                        <MobileQuickLinks handleNavClick={handleNavClick} />
                       </div>
                       <div className={styles.quickActionsMobile2}>
                         <MobileMenuHome handleMobileNavClick={handleMobileNavClick} />
@@ -160,7 +176,7 @@ const Header: React.FunctionComponent = () => {
                     <motion.div
                       key="step-2"
                     >
-                      <div style={{ position: 'absolute', top: '3.5%', left: '5%', zIndex: 10 }}>
+                      <div style={{ position: 'absolute', top: '15%', left: '5%', zIndex: 10 }}>
                         <motion.div
                           initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
