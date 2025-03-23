@@ -1,3 +1,4 @@
+'use client';
 import type { EventsApiResponse } from '@/app/lib/definitions';
 import { convertDatesIntoReadable } from '@/app/lib/utils';
 import { motion } from 'framer-motion';

@@ -1,3 +1,4 @@
+'use client';
 import type { INavTriggeredState } from '../../Header';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
