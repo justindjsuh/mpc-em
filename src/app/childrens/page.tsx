@@ -44,9 +44,11 @@ const ChildrensMinistry: React.FC = () => {
             <h3>NUTURE YOUNG HEARTS IN OUR CHILDREN'S MINISTRY.</h3>
             <div className={styles.details}>
               <p>The Children&apos;s Ministry — Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta.</p>
-              <p>Pastor Information</p>
-              <p>First Name Last Name</p>
-              <p>Email Address</p>
+              <p className={styles.pastorInfo}>PASTOR INFORMATION</p>
+              <div>
+                <p>First Name Last Name</p>
+                <p>Email Address</p>
+              </div>
             </div>
           </motion.div>
         </div>
