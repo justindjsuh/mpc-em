@@ -184,6 +184,18 @@
   .headerContainer a {
     display: none;
   }
+  .quickActionsMobile {
+    gap: 0.75rem;
+  }
+  .quickActionsMobile a {
+    font-size: 1.75rem;
+  }
+  .quickActionsMobile2 {
+    gap: 0.75rem;
+  }
+  .quickActionsMobile2 div {
+    font-size: 1.75rem;
+  }
 }
 
 /* Laptops and larger */

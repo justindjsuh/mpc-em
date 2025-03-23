@@ -179,18 +179,35 @@
   */
 }
 
+/* Laptops and larger */
+@media (max-width: 1024px) {
+  /* Styles for laptops and small desktops */
+  .imgContainer {
+    width: 100vw;
+  }
+  .heroDesc {
+    font-size: var(--header-hero-size);
+  }
+  .churchIntroDetails {
+    height: auto;
+    padding: 4rem;
+  }
+  .serviceType {
+    font-size: var(--header3-size);
+  }
+}
+
 /* Tablets and larger */
 @media (max-width: 768px) {
   .page {
     padding: 0;
   }
   .heroTitle h1 {
-    font-size: var(--small-text-size);
+    font-size: 0.75rem;
   }
   .heroDesc {
-    text-align: center;
     white-space: wrap;
-    font-size: var(--header-hero-size);
+    font-size: 2.5rem;
   }
   .churchIntroDetails {
     height: auto;
@@ -234,22 +251,8 @@
   .imgContainer {
     width: 100vw;
   }
-}
-
-/* Laptops and larger */
-@media (max-width: 1024px) {
-  /* Styles for laptops and small desktops */
-  .imgContainer {
-    width: 100vw;
-  }
-  .heroDesc {
-    font-size: var(--header-hero-size);
-  }
-  .churchIntroDetails {
-    height: auto;
-    padding: 4rem;
-  }
-  .serviceType {
-    font-size: var(--header3-size);
+  .heroTitle {
+    padding: 0 2rem;
+    align-items: flex-start;
   }
 }
