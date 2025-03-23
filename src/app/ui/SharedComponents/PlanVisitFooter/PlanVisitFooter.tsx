@@ -3,7 +3,11 @@ import { useRouter } from 'next/navigation';
 import Button from '../../Button/Button';
 import styles from './PlanVisitFooter.module.css';
 
-const PlanVisitFooter: React.FC = () => {
+interface IPlantVisitFooterProps {
+  delay?: number;
+}
+
+const PlanVisitFooter: React.FC<IPlantVisitFooterProps> = ({ delay = 0.4 }) => {
   const router = useRouter();
 
   const handleNavigation = () => {
@@ -18,7 +22,7 @@ const PlanVisitFooter: React.FC = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{
-          delay: 0.4,
+          delay,
           type: 'spring',
           stiffness: 100, // Makes it feel bouncy yet controlled
           damping: 15, // Slows it down for a smooth finish
