@@ -166,10 +166,10 @@ const Header: React.FunctionComponent = () => {
                       transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
                       <div className={styles.quickActionsMobile}>
-                        <MobileQuickLinks handleNavClick={handleNavClick} />
+                        <MobileQuickLinks handleNavClickAction={handleNavClick} />
                       </div>
                       <div className={styles.quickActionsMobile2}>
-                        <MobileMenuHome handleMobileNavClick={handleMobileNavClick} />
+                        <MobileMenuHome handleMobileNavClickAction={handleMobileNavClick} />
                       </div>
                     </motion.div>
                   )
