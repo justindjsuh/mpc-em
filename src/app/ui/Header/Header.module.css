@@ -19,6 +19,7 @@
 
 .headerContainer img {
   height: auto;
+  cursor: pointer;
 }
 
 .navLinks {
