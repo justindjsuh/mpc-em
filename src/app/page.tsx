@@ -1,5 +1,7 @@
 'use client';
+import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import styles from './page.module.css';
 import FeaturedEvents from './ui/Landing/FeaturedEvents/FeaturedEvents';
@@ -11,9 +13,15 @@ import Layout from './ui/Layout/Layout';
 import NewsletterSignup from './ui/SharedComponents/NewsletterSignup/NewsletterSignup';
 
 export default function Home() {
+  const router = useRouter();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleNavigation = () => {
+    router.push('/visitor-information');
+  };
 
   return (
     <>
@@ -39,6 +47,21 @@ export default function Home() {
         <FeaturedEvents />
         <RecentSermon />
         <NewsletterSignup />
+        <motion.div
+          className={styles.planAVisit}
+          onClick={handleNavigation}
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            delay: 1,
+            type: 'spring',
+            stiffness: 100, // Makes it feel bouncy yet controlled
+            damping: 15, // Slows it down for a smooth finish
+            mass: 0.75, // Reduces abrupt movement
+          }}
+        >
+          Plan A Visit
+        </motion.div>
       </Layout>
     </>
   );

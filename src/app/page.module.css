@@ -170,6 +170,32 @@
   position: relative;
 }
 
+.planAVisit {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  background: rgba(212, 186, 236, 0.6);
+  backdrop-filter: blur(10px);
+  color: var(--font-color-dark);
+  padding: 1rem 1.5rem;
+  border-radius: 50rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.planAVisit:hover {
+  background: rgba(212, 186, 236, 0.8);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 25px rgba(212, 186, 236, 0.3);
+  transform: translateY(-3px);
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   /* a.primary:hover {

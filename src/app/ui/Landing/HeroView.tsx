@@ -17,7 +17,7 @@ const HeroView: React.FC = () => {
         className={styles.heroTitle}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
+        transition={{ delay: 0.5, duration: 0.6, ease: 'easeOut' }}
         style={{ position: 'absolute', top: '30%', left: '0', transform: 'translate(-50%, -50%)', zIndex: 1 }}
       >
         <h1>MONTGOMERY PRESBYTERIAN CHURCH</h1>
