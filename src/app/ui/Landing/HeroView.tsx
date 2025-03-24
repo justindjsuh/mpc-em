@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import styles from '../../page.module.css';
@@ -6,6 +6,9 @@ import Button from '../Button/Button';
 
 const HeroView: React.FC = () => {
   const router = useRouter();
+  const { scrollY } = useScroll();
+
+  const y = useTransform(scrollY, [0, 900], [0, -100]);
 
   const handleNavigate = () => {
     router.push('/visitor-information');
@@ -34,7 +37,7 @@ const HeroView: React.FC = () => {
           />
         </div>
       </motion.div>
-      <div className={styles.imgContainer}>
+      <motion.div className={styles.imgContainer} style={{ y }}>
         <Image
           src="/landing_church.avif"
           alt="an interior of the church chapel"
@@ -42,7 +45,7 @@ const HeroView: React.FC = () => {
           priority
           fill
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
