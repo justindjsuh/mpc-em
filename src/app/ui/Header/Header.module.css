@@ -98,10 +98,11 @@
 
 .navDropdownBot {
   position: fixed;
-  bottom: 0;
+  top: 50%;
   left: 0;
-  height: 45%;
+  height: 50vh;
   background-color: rgba(38, 38, 38, 0.2);
+  z-index: -1;
 }
 
 .hamburgerMenu {

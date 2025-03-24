@@ -43,7 +43,7 @@ const Header: React.FunctionComponent = () => {
   }, [navigatedOut]);
 
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (mobileMenuOpen || (navTriggered.triggered && !navigatedOut)) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -51,7 +51,7 @@ const Header: React.FunctionComponent = () => {
     if (!mobileMenuOpen) {
       setStep(1);
     }
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, navTriggered.triggered, navigatedOut]);
 
   const handleMobileNavClick = (route: IActivePathOptions) => {
     setStep(2);
