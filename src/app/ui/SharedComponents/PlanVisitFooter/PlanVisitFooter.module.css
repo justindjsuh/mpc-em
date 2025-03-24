@@ -5,6 +5,11 @@
   background-color: var(--bg-light);
 }
 
+.lightContainer {
+  background-color: var(--bg-dark);
+  color: var(--font-color-dark);
+}
+
 .planVisitContainer {
   display: flex;
   justify-content: center;
@@ -18,13 +23,18 @@
   box-shadow:
     0 2px 15px 3px rgba(0, 0, 0, 0.2),
     0 1px 13px 3px rgba(0, 0, 0, 0.1);
+  color: var(--font-color-light);
 }
 
 .planVisitContainer h3 {
-  color: var(--font-color-light);
   font-size: var(--header3-size);
   white-space: nowrap;
   font-weight: 600;
+}
+
+.light {
+  background-color: var(--bg-light);
+  color: var(--font-color-dark);
 }
 
 @media (max-width: 1024px) {
