@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 
 interface IButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   theme: 'light' | 'dark';
   iconTheme: 'light' | 'dark';
   filled?: boolean;
