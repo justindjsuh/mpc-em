@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../ui/Button/Button';
 import Layout from '../ui/Layout/Layout';
 import PlanVisitFooter from '../ui/SharedComponents/PlanVisitFooter/PlanVisitFooter';
@@ -9,6 +10,29 @@ import styles from './EmMinistries.module.css';
 
 const EmMinistries: React.FC = () => {
   const router = useRouter();
+
+  const section1Ref = useRef(null);
+  const [isStuck, setIsStuck] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry) {
+          setIsStuck(entry.boundingClientRect.top <= 0);
+        }
+      },
+      {
+        root: null, // viewport
+        rootMargin: '0px 0px -100% 0px', // No offset, strictly when top reaches viewport top
+        threshold: 0, // Trigger as soon as any part of it enters/leaves,
+      },
+    );
+
+    if (section1Ref.current) {
+      observer.observe(section1Ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const handleNavigation = () => {
     router.push('/get-connected');
@@ -42,7 +66,7 @@ const EmMinistries: React.FC = () => {
             />
           </motion.div>
         </div>
-        <div className={styles.contentContainer}>
+        <div ref={section1Ref} className={`${styles.contentContainer} ${isStuck ? styles.stuck : ''}`}>
           <motion.div
             className={styles.content}
             initial={{ opacity: 0, y: 10 }}
@@ -70,8 +94,6 @@ const EmMinistries: React.FC = () => {
           </motion.div>
         </div>
         <div className={`${styles.contentContainer} ${styles.contentContainer2}`}>
-          {/* wrap up styles for the bible study section
-           */}
           <motion.div
             className={styles.content}
             initial={{ opacity: 0, y: 10 }}
@@ -83,7 +105,7 @@ const EmMinistries: React.FC = () => {
               <p>Our Family Groups — Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta. Netus lobortis sit arcu tincidunt, aliquam class.</p>
               <Button text="Get Connected" theme="dark" iconTheme="dark" onClick={handleNavigation} />
             </div>
-            <h3>EXPLORE SCRIPTURE AND DEEPEND YOUR FAITH.</h3>
+            <h3>EXPLORE SCRIPTURE AND DEEPEN YOUR FAITH.</h3>
           </motion.div>
           <motion.div
             className={`${styles.content} ${styles.content2}`}

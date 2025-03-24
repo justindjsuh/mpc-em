@@ -47,19 +47,29 @@
   width: 100%;
 }
 
+.contentContainer.stuck {
+  position: sticky;
+  top: 0;
+}
+
 .content {
-  /* display: flex; */
   display: grid;
   grid-template-columns: 50% 45%;
   width: 83%;
   padding: 5rem 0;
+  padding-bottom: 2rem;
   gap: 5rem;
+}
+
+.content:last-of-type {
+  padding-bottom: 5rem;
 }
 
 .contentContainer2 {
   background-color: var(--bg-dark);
   color: var(--font-color-light);
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  z-index: 2;
 }
 
 .content2 h3 {
@@ -67,7 +77,7 @@
 }
 
 .content h3 {
-  font-size: var(--header-hero-size);
+  font-size: var(--header2-size);
 }
 
 .details {
@@ -81,12 +91,14 @@
 
 @media (max-width: 768px) {
   .content {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-top: 3rem;
   }
   .content h3 {
     font-size: var(--header2-size);
+    white-space: wrap;
   }
   .headerContainer h3 {
     font-size: var(--header2-size);

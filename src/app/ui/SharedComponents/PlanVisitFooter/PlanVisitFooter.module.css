@@ -6,8 +6,9 @@
 }
 
 .lightContainer {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-light);
   color: var(--font-color-dark);
+  padding-top: 1.5rem;
 }
 
 .planVisitContainer {
@@ -35,6 +36,7 @@
 .light {
   background-color: var(--bg-light);
   color: var(--font-color-dark);
+  box-shadow: none;
 }
 
 @media (max-width: 1024px) {
