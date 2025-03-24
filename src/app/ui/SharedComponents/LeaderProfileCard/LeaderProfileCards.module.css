@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container h4 {
+  font-size: var(--header4-size);
+}
+
+.imgContainer {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 0.5rem;
+  }
+  .imgContainer {
+    width: 35vw;
+    height: 35vw;
+  }
+  .container h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .imgContainer {
+    width: 80vw;
+    height: 80vw;
+  }
+}
