@@ -47,6 +47,43 @@ a {
   text-decoration: none;
 }
 
+/* Apply font family to the entire form */
+.ant-form {
+  font-family: 'Metropolis', sans-serif;
+}
+
+/* Apply font family to all input fields, including placeholders */
+.ant-input,
+.ant-input::placeholder,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker {
+  font-family: 'Metropolis', sans-serif;
+}
+
+.ant-input {
+  background: var(--bg-light) !important;
+  font-size: var(--small-text-size) !important;
+}
+
+.ant-select-selector {
+  background: var(--bg-light) !important;
+  font-size: var(--small-text-size) !important;
+}
+
+.ant-checkbox-label {
+  font-family: 'Metropolis', sans-serif;
+}
+
+.ant-radio-button-label {
+  font-family: 'Metropolis', sans-serif;
+}
+
+/* Apply font family to Form labels */
+.ant-form-item-label label {
+  font-family: 'Metropolis', sans-serif;
+}
+
 @media (max-width: 768px) {
   html,
   body {
