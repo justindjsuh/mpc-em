@@ -2,6 +2,8 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  justify-content: flex-end;
+  background: linear-gradient(145deg, #101010 0%, #262626 80%, #d4baec 80%, #d4baec 100%);
 }
 
 .leftContainer {
@@ -9,32 +11,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-light);
   height: 100%;
-  width: 70%;
-  padding: 8rem 0 2rem 0;
+  width: 50%;
+  padding: 8rem 0 8rem 0;
 }
 
 .rightContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
-  width: 30%;
-  position: absolute;
-  top: 20%;
-  right: 10%;
-}
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   width: 40%;
 }
 
+.rightContainer h3 {
+  font-size: var(--header1-size);
+  color: var(--font-color-light);
+}
+
+.formContainer {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 65%;
+  padding: 3rem 3rem;
+  -webkit-box-shadow: 0px 0px 40px -17px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px -17px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px -17px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+}
+
 .formContainer h3 {
-  font-weight: 500;
-  font-size: var(--header2-size);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .divider {
@@ -54,8 +66,8 @@
 
 .churchImgContainer {
   position: relative;
-  width: 25vw;
-  height: 25vw;
+  width: 30vw;
+  height: 30vw;
   border-radius: 10px;
 }
 
@@ -92,12 +104,15 @@
 
 @media (max-width: 1024px) {
   .formContainer {
-    width: 60%;
+    width: 90%;
   }
   .churchImgContainer {
     position: relative;
     width: 35vw;
     height: 35vw;
+  }
+  .leftContainer {
+    justify-content: center;
   }
 }
 
@@ -110,6 +125,8 @@
   }
   .leftContainer {
     width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
   }
   .formContainer {
     width: 90%;
