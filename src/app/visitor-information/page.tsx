@@ -11,31 +11,35 @@ import styles from './VisitorInformation.module.css';
 const getItems: (panelStyle: CSSProperties) => CollapseProps['items'] = panelStyle => [
   {
     key: '1',
-    label: <strong>Sunday Service Information</strong>,
+    label: (
+      <motion.strong initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}>
+        Sunday Service Information
+      </motion.strong>
+    ),
     children: <p>Our service begins at 9:45 AM in the main sanctuary. There are two entrances if you are facing the church from the parking lot — the main sanctuary is located near the left one.</p>,
     style: panelStyle,
   },
   {
     key: '2',
-    label: <strong>Where is MPC located?</strong>,
+    label: <motion.strong initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}>Where is MPC located?</motion.strong>,
     children: <p>MPC is located at 3260 Morris Road, Lansdale PA 19446.</p>,
     style: panelStyle,
   },
   {
     key: '3',
-    label: <strong>Do you have parking?</strong>,
+    label: <motion.strong initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}>Do you have parking?</motion.strong>,
     children: <p>You will find ample parking in our dedicated parking lot in front of our building!</p>,
     style: panelStyle,
   },
   {
     key: '4',
-    label: <strong>What can I expect Sunday Service to be like?</strong>,
+    label: <motion.strong initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}>What can I expect Sunday Service to be like?</motion.strong>,
     children: <p>Our weekly gatherings are characterized by our desire to worship and encounter God through corporate prayer, singing contemporary songs and hymns, the preaching of God's word, and fellowship with each other. Located just inside the main entrance, a welcoming staff member will be there to welcome you and answer any questions you have.</p>,
     style: panelStyle,
   },
   {
     key: '5',
-    label: <strong>What if I have kids?</strong>,
+    label: <motion.strong initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}>What if I have kids?</motion.strong>,
     children: <p>Nursery and preschool are available later at 11:45 AM. Children and youth services are also available at 11:45 AM.</p>,
     style: panelStyle,
   },
@@ -90,11 +94,7 @@ const VisitorInformation: React.FC = () => {
               >
                 Our hope is that no matter who you are or where you are in your life, that you would join us in loving and worshiping God.
               </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}
-              >
+              <motion.div>
                 <Collapse
                   bordered={false}
                   style={{ backgroundColor: '#fafafa' }}

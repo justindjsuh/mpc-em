@@ -111,7 +111,7 @@ const EmMinistries: React.FC = () => {
             className={`${styles.content} ${styles.content2}`}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.4 }}
           >
             <h3>WHAT CAN I EXPECT?</h3>
