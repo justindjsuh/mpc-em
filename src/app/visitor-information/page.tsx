@@ -64,33 +64,63 @@ const VisitorInformation: React.FC = () => {
   return (
     <Layout title="Visitor Information">
       <div className={styles.container}>
-        <div className={styles.header}>
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
           <p>VISITOR INFORMATION</p>
           <h3>WE'RE HAPPY YOU'RE HERE</h3>
-        </div>
+        </motion.div>
         <div className={styles.detailsContainer}>
           <div className={styles.details}>
             <div className={styles.leftSide}>
-              <h3>WELCOME TO MPC</h3>
-              <p>Our hope is that no matter who you are or where you are in your life, that you would join us in loving and worshiping God.</p>
-              <Collapse
-                bordered={false}
-                style={{ backgroundColor: '#fafafa' }}
-                items={getItems(panelStyle)}
-                expandIcon={({ isActive }) => (
-                  <motion.span
-                    initial={{ rotate: 0 }}
-                    animate={{ rotate: isActive ? 45 : 0 }}
-                    transition={{ duration: 0.1, ease: 'easeInOut' }}
-                  >
-                    {isActive ? PlusOutlined : PlusOutlined}
-                  </motion.span>
-                )}
-                expandIconPosition="end"
-                size="large"
-              />
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
+              >
+                WELCOME TO MPC
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
+              >
+                Our hope is that no matter who you are or where you are in your life, that you would join us in loving and worshiping God.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}
+              >
+                <Collapse
+                  bordered={false}
+                  style={{ backgroundColor: '#fafafa' }}
+                  items={getItems(panelStyle)}
+                  expandIcon={({ isActive }) => (
+                    <motion.span
+                      initial={{ rotate: 0 }}
+                      animate={{ rotate: isActive ? 45 : 0 }}
+                      transition={{ duration: 0.1, ease: 'easeInOut' }}
+                    >
+                      {isActive ? PlusOutlined : PlusOutlined}
+                    </motion.span>
+                  )}
+                  expandIconPosition="end"
+                  size="large"
+                />
+              </motion.div>
             </div>
-            <SideNav />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <SideNav />
+            </motion.div>
           </div>
         </div>
       </div>
