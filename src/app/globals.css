@@ -96,6 +96,12 @@ a {
   font-family: 'Metropolis', sans-serif;
 }
 
+.ant-table-thead > tr > th {
+  background-color: #f2f2f2 !important; /* Change to desired color */
+  color: #262626 !important; /* Optional: Change text color */
+  font-weight: bold; /* Optional: Make text bold */
+}
+
 @media (max-width: 768px) {
   html,
   body {

@@ -1,18 +1,18 @@
 interface EventLinks {
-  lable: string;
+  label: string;
   link: string;
 }
 
 export interface EventsApiResponse {
   id: number;
-  created_at: Date;
+  created_at: Date | string;
   created_by: string;
   name: string;
   description: string;
   end_date: string;
   start_date: string;
   image_url: string;
-  liinks: EventLinks[];
+  links: EventLinks[] | null;
 };
 
 interface YoutubeThumbnails {
