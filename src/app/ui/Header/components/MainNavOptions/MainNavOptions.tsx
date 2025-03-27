@@ -132,7 +132,7 @@ export const MediaNav: React.FC<INavProps> = ({ handleNavClick }) => {
         animate={{ opacity: 1, transition: { delay: 0.15, duration: 0.3, ease: 'easeOut' } }}
         exit={{ opacity: 0, transition: { delay: 0.03, duration: 0.15, ease: 'easeOut' } }}
       >
-        <Link href="/em-ministries" onClick={e => handleNavClick(e, '/em-ministries')}>Sermons</Link>
+        <Link href="/sermons" onClick={e => handleNavClick(e, '/sermons')}>Sermons</Link>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}

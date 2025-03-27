@@ -16,8 +16,24 @@ export async function GET(req: NextRequest) {
   if (type === 'latest') {
     YOUTUBE_API_URL = `${BASE_URL}/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1`;
   } else if (type === 'all') {
-    // YOUTUBE_API_URL = `${BASE_URL}/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=10`;
-    YOUTUBE_API_URL = `${BASE_URL}/channels?part=contentDetails&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`;
+    // Step 1: Get the uploads playlist ID
+    const channelRes = await fetch(
+      `${BASE_URL}/channels?part=contentDetails&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`,
+    );
+    const channelData = await channelRes.json();
+
+    const uploadsPlaylistId = channelData.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
+    if (!uploadsPlaylistId) {
+      return NextResponse.json({ error: 'Uploads playlist not found' }, { status: 404 });
+    }
+
+    // Step 2: Get all videos from the uploads playlist
+    const videosRes = await fetch(
+      `${BASE_URL}/playlistItems?part=snippet&playlistId=${uploadsPlaylistId}&maxResults=50&key=${YOUTUBE_API_KEY}`,
+    );
+    const videosData = await videosRes.json();
+
+    return NextResponse.json(videosData.items);
   } else {
     return NextResponse.json({ error: 'Invalid type parameter' }, { status: 400 });
   }

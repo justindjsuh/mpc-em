@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.header {
+  color: var(--font-color-light);
+  padding: 4rem 0;
+}
+
+.header p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.header h3 {
+  font-size: var(--header-hero-size);
+}
+
+.detailContainer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-light);
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 80%;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+}
+
+.details h3 {
+  font-size: 3rem;
+}
+
+.youtubeContainer {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.youtubeContainer img {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow:
+    0 2px 15px 3px rgba(0, 0, 0, 0.1),
+    0 1px 13px 3px rgba(0, 0, 0, 0.08);
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sermonArchiveContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+.sermonArchive {
+  width: 80%;
+  padding: 4rem 0;
+}
+
+.sermonArchive > p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  margin-bottom: 1rem;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ellipsisCell {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Ensures it does not shrink weirdly */
+}
+
+@media (max-width: 1300px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h3 {
+    font-size: var(--header2-size);
+  }
+  .details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

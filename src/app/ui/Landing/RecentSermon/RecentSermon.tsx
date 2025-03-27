@@ -29,7 +29,7 @@ const RecentSermon: React.FC = () => {
     <div className={styles.sermonsContainer}>
       <div className={styles.youtubeContainer}>
         <motion.a
-          href={`https://www.youtube.com/watch?v=${sermon?.id.videoId}`}
+          href={sermon ? `https://www.youtube.com/watch?v=${sermon.id.videoId}` : ''}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}

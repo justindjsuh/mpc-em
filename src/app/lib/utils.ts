@@ -3,7 +3,7 @@ interface ConvertedDates {
   endDate: string;
 }
 
-export const convertDatesIntoReadable = (eventStartDate: string, eventEndDate: string): ConvertedDates => {
+export const convertDatesIntoReadable = (eventStartDate: string, eventEndDate?: string): ConvertedDates => {
   const startDate = new Date(`${eventStartDate}T00:00`);
   const formattedStartDate = startDate.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -17,4 +17,13 @@ export const convertDatesIntoReadable = (eventStartDate: string, eventEndDate: s
     day: 'numeric',
   });
   return { startDate: formattedStartDate, endDate: formattedEndDate };
+};
+
+export const convertSingleDate = (date: string | Date): string => {
+  const startDate = new Date(date);
+  return startDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
 };

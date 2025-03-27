@@ -102,6 +102,10 @@ a {
   font-weight: bold; /* Optional: Make text bold */
 }
 
+.ant-pagination-item {
+  background-color: var(--bg-light) !important;
+}
+
 @media (max-width: 768px) {
   html,
   body {

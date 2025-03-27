@@ -30,6 +30,7 @@ export interface YoutubeSnippet {
   publishedAt: Date;
   thumbnails: YoutubeThumbnails;
   title: string;
+  resourceId?: { kind: 'string'; videoId: 'string' };
 }
 
 export interface YoutubeVideo {
