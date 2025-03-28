@@ -2,7 +2,6 @@
 
 import { createClient } from '@/app/lib/supabaseClient';
 import { revalidatePath } from 'next/cache';
-
 import { redirect } from 'next/navigation';
 
 export async function login(email: string, password: string) {
@@ -49,7 +48,7 @@ export async function resetPassword(email: string) {
 
   // Sends the reset password email to the user
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/admin/reset-password`,
+    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/admin/reset`,
   });
 
   if (error) {

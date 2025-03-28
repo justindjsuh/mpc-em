@@ -1,0 +1,92 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(120deg, #6a11cb 5%, #2575fc 40%, #6a11cb 95%, #2575fc 100%); */
+  /* background: linear-gradient(45deg, #6a11cb, #5374e7, #00aaff, #4dc8ff, #80b3ff); */
+  /* background-size: 400% 400%; */
+  /* animation: gradient 8s ease infinite; */
+  background: url('/mesh-gradient.png') no-repeat center/cover;
+  background-size: 200% 200%;
+  animation: meshMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes meshMove {
+  0% {
+    background-position: 55% 40%;
+  }
+  100% {
+    background-position: 40% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(170deg, transparent 0%, transparent 50%, #fafafa 50%, #fafafa 100%);
+}
+
+.loginDetails {
+  background-color: var(--bg-light);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+}
+
+.loginDetails h3 {
+  font-size: var(--header3-size);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.passwordHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.passwordHeader div {
+  color: #4853eb;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkBtn {
+  color: #4853eb !important;
+  font-weight: 600 !important;
+  margin-top: 1rem !important;
+}
+
+.confirmationNav {
+  color: #4853eb;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirmationNav:hover {
+  color: #262626;
+}

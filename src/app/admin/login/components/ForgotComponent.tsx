@@ -3,7 +3,7 @@ import type { IViewProps } from './LoginComponent';
 import { Button, Form, Input } from 'antd';
 import styles from '../Login.module.css';
 
-const ForgotComponent: React.FC<IViewProps> = ({ setView }) => {
+const ForgotComponent: React.FC<IViewProps> = ({ setView, isLoading }) => {
   return (
     <>
       <Form.Item
@@ -19,6 +19,7 @@ const ForgotComponent: React.FC<IViewProps> = ({ setView }) => {
         type="primary"
         htmlType="submit"
         block
+        loading={isLoading}
         style={{
           padding: '1.5rem 0',
           fontWeight: 600,

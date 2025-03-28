@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 'use client';
 import type { FormProps } from 'antd';
 import { Form, notification } from 'antd';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { login, resetPassword } from './actions';
@@ -20,6 +21,7 @@ export interface FieldType {
 }
 
 const AdminLogin: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [view, setView] = useState<Views>('login');
   const [api, contextHolder] = notification.useNotification();
@@ -31,35 +33,40 @@ const AdminLogin: React.FC = () => {
   };
 
   const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+    setIsLoading(true);
     if (view === 'login') {
       const result = await login(values.email, values.password);
+      setIsLoading(false);
 
       if (result?.error?.message === 'Invalid login credentials') {
         openNotificationWithIcon('error', 'Login Failed', 'Incorrect email or password.');
       } else if (result?.status === 'success') {
         router.push('/admin/dashboard');
-        openNotificationWithIcon('success', 'Login Successful!');
       } else {
         openNotificationWithIcon('warning', 'Login Failed', 'An error occurred, please try again.');
       }
     } else if (view === 'forgot') {
       await resetPassword(values.email);
+      sessionStorage.setItem('resetEmail', email);
       setView('forgotFinal');
       setEmail(values.email);
     }
   };
 
+  const handleReload = () => window.location.reload();
+
   return (
     <div className={styles.container}>
       {contextHolder}
-      <Link href="/" style={{ position: 'absolute', top: '3%', left: '5%' }}>
+      <div role="button" onClick={handleReload} style={{ position: 'absolute', top: '3%', left: '5%', cursor: 'pointer' }}>
         <Image
           src="/admin_logo.png"
           alt="MPC logo"
           width={175}
           height={58}
+          priority
         />
-      </Link>
+      </div>
       <div className={styles.loginContainer}>
         <AnimatePresence mode="wait">
           <motion.div
@@ -125,8 +132,8 @@ const AdminLogin: React.FC = () => {
                       layout="vertical"
                       requiredMark={false}
                     >
-                      {view === 'login' && <LoginComponent setView={setView} />}
-                      {view === 'forgot' && <ForgotComponent setView={setView} />}
+                      {view === 'login' && <LoginComponent setView={setView} isLoading={isLoading} />}
+                      {view === 'forgot' && <ForgotComponent setView={setView} isLoading={isLoading} />}
                     </Form>
                   </motion.div>
                 )}

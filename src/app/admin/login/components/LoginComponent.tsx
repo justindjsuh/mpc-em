@@ -6,9 +6,10 @@ import styles from '../Login.module.css';
 
 export interface IViewProps {
   setView: (view: Views) => void;
+  isLoading?: boolean;
 }
 
-const LoginComponent: React.FC<IViewProps> = ({ setView }) => {
+const LoginComponent: React.FC<IViewProps> = ({ setView, isLoading }) => {
   const passwordLabel = (
     <div className={styles.passwordHeader}>
       <span>Password</span>
@@ -47,6 +48,7 @@ const LoginComponent: React.FC<IViewProps> = ({ setView }) => {
       <Button
         type="primary"
         htmlType="submit"
+        loading={isLoading}
         block
         style={{
           padding: '1.5rem 0',
