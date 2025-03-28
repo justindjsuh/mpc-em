@@ -34,22 +34,36 @@ const AdminLogin: React.FC = () => {
 
   const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
     setIsLoading(true);
-    if (view === 'login') {
-      const result = await login(values.email, values.password);
-      setIsLoading(false);
+    try {
+      if (view === 'login') {
+        const result = await login(values.email, values.password);
 
-      if (result?.error?.message === 'Invalid login credentials') {
-        openNotificationWithIcon('error', 'Login Failed', 'Incorrect email or password.');
-      } else if (result?.status === 'success') {
-        router.push('/admin/dashboard');
-      } else {
-        openNotificationWithIcon('warning', 'Login Failed', 'An error occurred, please try again.');
+        if (result?.error?.message === 'Invalid login credentials') {
+          openNotificationWithIcon('error', 'Login Failed', 'Incorrect email or password.');
+        } else if (result?.status === 'success') {
+          router.push('/admin/dashboard');
+          // Delay the loading state change until after the navigation
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 0);
+
+          // Prevent further actions after navigation
+        } else {
+          openNotificationWithIcon('warning', 'Login Failed', 'An error occurred, please try again.');
+        }
+      } else if (view === 'forgot') {
+        await resetPassword(values.email);
+        sessionStorage.setItem('resetEmail', email);
+        setView('forgotFinal');
+        setEmail(values.email);
+        setIsLoading(false);
       }
-    } else if (view === 'forgot') {
-      await resetPassword(values.email);
-      sessionStorage.setItem('resetEmail', email);
-      setView('forgotFinal');
-      setEmail(values.email);
+    } catch {
+      openNotificationWithIcon('warning', 'Login Failed', 'An error occurred, please try again.');
+    } finally {
+      if (view !== 'login') {
+        setIsLoading(false);
+      }
     }
   };
 
