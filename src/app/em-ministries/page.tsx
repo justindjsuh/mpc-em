@@ -94,31 +94,19 @@ const EmMinistries: React.FC = () => {
           </motion.div>
         </div>
         <div className={`${styles.contentContainer} ${styles.contentContainer2}`}>
-          <motion.div
-            className={styles.content}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.4 }}
-          >
+          <div className={styles.content}>
             <div className={styles.details}>
               <p>Our Family Groups — Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta. Netus lobortis sit arcu tincidunt, aliquam class.</p>
               <Button text="Get Connected" theme="dark" iconTheme="dark" onClick={handleNavigation} />
             </div>
             <h3>EXPLORE SCRIPTURE AND DEEPEN YOUR FAITH.</h3>
-          </motion.div>
-          <motion.div
-            className={`${styles.content} ${styles.content2}`}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true, amount: 0.4 }}
-          >
+          </div>
+          <div className={`${styles.content} ${styles.content2}`}>
             <h3>WHAT CAN I EXPECT?</h3>
             <div className={styles.details}>
               <p>Our Bible Studies — Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta. Netus lobortis sit arcu tincidunt, aliquam class.</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       <PlanVisitFooter theme="light" />
