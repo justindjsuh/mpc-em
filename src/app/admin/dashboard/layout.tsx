@@ -1,4 +1,5 @@
 'use client';
+import type { EventsApiResponse } from '@/app/lib/definitions';
 import type { MenuProps } from 'antd';
 import { logout } from '@/app/lib/logout';
 import { AppstoreOutlined, CalendarOutlined, LockOutlined, LogoutOutlined, PhoneOutlined, TeamOutlined } from '@ant-design/icons';
@@ -16,59 +17,92 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
   {
-    key: 'nav1',
+    key: '/admin/dashboard',
     label: 'Dashboard',
     icon: <AppstoreOutlined />,
   },
   {
-    key: 'nav2',
+    key: '/admin/dashboard/events',
     label: 'Manage Events',
     icon: <CalendarOutlined />,
   },
   {
-    key: 'nav3',
+    key: '/admin/dashboard/leaders',
     label: 'Manage Leaders',
     icon: <TeamOutlined />,
   },
   {
-    key: 'nav4',
+    key: '/admin/dashboard/requests',
     label: 'Manage Access',
     icon: <LockOutlined />,
   },
   {
-    key: 'nav5',
+    key: '/admin/dashboard/contact',
     label: 'Contact',
     icon: <PhoneOutlined />,
   },
   {
-    key: 'nav6',
+    key: 'logout',
     label: 'Logout',
     icon: <LogoutOutlined />,
   },
 ];
 
+const mobileItems: MenuItem[] = [
+  {
+    key: 'mobileNav',
+    label: 'Navigation',
+    children: [
+      {
+        key: '/admin/dashboard',
+        label: 'Dashboard',
+        icon: <AppstoreOutlined />,
+      },
+      {
+        key: '/admin/dashboard/events',
+        label: 'Manage Events',
+        icon: <CalendarOutlined />,
+      },
+      {
+        key: '/admin/dashboard/leaders',
+        label: 'Manage Leaders',
+        icon: <TeamOutlined />,
+      },
+      {
+        key: '/admin/dashboard/requests',
+        label: 'Manage Access',
+        icon: <LockOutlined />,
+      },
+      {
+        key: '/admin/dashboard/contact',
+        label: 'Contact',
+        icon: <PhoneOutlined />,
+      },
+      {
+        key: 'logout',
+        label: 'Logout',
+        icon: <LogoutOutlined />,
+      },
+    ],
+
+  },
+];
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [height, setHeight] = useState('auto');
+  // const [height, setHeight] = useState('auto');
   const [userEmail, setUserEmail] = useState('');
   const [, startTransition] = useTransition();
+  const [events, setEvents] = useState<EventsApiResponse[]>([]);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const ref = useRef<HTMLDivElement>(null);
 
   const handleNavClick: MenuProps['onClick'] = (e) => {
-    switch (e.key) {
-      case 'nav1':
-        router.push('/admin/dashboard');
-        break;
-      case 'nav2':
-        router.push('/admin/dashboard/events');
-        break;
-      case 'nav3':
-        router.push('/admin/dashboard/leaders');
-        break;
-      case 'nav6':
-        startTransition(logout);
+    if (e.key === 'logout') {
+      startTransition(logout);
     }
+    router.push(e.key);
   };
 
   const verify = async () => {
@@ -80,14 +114,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     verify();
   }, []);
 
-  useEffect(() => {
-    if (ref.current) {
-      const remToPx = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) * 6;
-      setHeight(`${ref.current.scrollHeight + remToPx}px`);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (ref.current) {
+  //     const remToPx = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) * 6;
+  //     setHeight(`${ref.current.scrollHeight + remToPx}px`);
+  //   }
+  // }, [pathname]);
 
-  const userContextValue = useMemo(() => ({ userEmail }), [userEmail]);
+  const userContextValue = useMemo(() => ({ userEmail, events, loading, setEvents }), [events, loading, userEmail]);
+
+  const getEventRecords = async () => {
+    const res = await fetch('/api/events');
+    const data: EventsApiResponse[] = await res.json();
+
+    setEvents(data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getEventRecords();
+  }, []);
 
   return (
     <UserContext value={userContextValue}>
@@ -110,16 +156,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 onClick={handleNavClick}
                 className={styles.nav}
                 style={{ width: 256 }}
-                defaultSelectedKeys={['nav1']}
+                defaultSelectedKeys={[pathname]}
                 mode="inline"
                 items={items}
+              />
+            </div>
+            <div className={`${styles.navOptions} ${styles.mobileNav}`}>
+              <Menu
+                onClick={handleNavClick}
+                className={styles.nav}
+                style={{ width: '92vw' }}
+                defaultSelectedKeys={[pathname]}
+                mode="inline"
+                items={mobileItems}
               />
             </div>
           </div>
           <motion.div
             className={styles.mainContent}
-            initial={{ height: 'auto' }}
-            animate={{ height }}
+            // initial={{ height: 'auto' }}
+            // animate={{ height }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
           >
             <div ref={ref}>

@@ -73,3 +73,34 @@
   height: 100%;
   background: linear-gradient(170deg, transparent 0%, transparent 35%, #fafafa 35%, #fafafa 100%);
 }
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .layoutContainer {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+  .mainContent {
+    width: 100%;
+  }
+  .logoNav {
+    padding-left: 1rem;
+  }
+  .navOptions {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+  }
+}
