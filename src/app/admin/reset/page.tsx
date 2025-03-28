@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import styles from './Reset.module.css';
 
 export interface FieldType {
@@ -187,23 +187,25 @@ const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {contextHolder}
-      <Link href="/admin/login" style={{ position: 'absolute', top: '3%', left: '5%' }}>
-        <Image
-          src="/admin_logo.png"
-          alt="MPC logo"
-          width={175}
-          height={58}
-          priority
-        />
-      </Link>
-      <div className={styles.loginContainer}>
-        <motion.div className={styles.loginDetails}>
-          {getResetView()}
-        </motion.div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={styles.container}>
+        {contextHolder}
+        <Link href="/admin/login" style={{ position: 'absolute', top: '3%', left: '5%' }}>
+          <Image
+            src="/admin_logo.png"
+            alt="MPC logo"
+            width={175}
+            height={58}
+            priority
+          />
+        </Link>
+        <div className={styles.loginContainer}>
+          <motion.div className={styles.loginDetails}>
+            {getResetView()}
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 
