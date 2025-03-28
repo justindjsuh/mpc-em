@@ -1,26 +1,27 @@
-import { createClient } from '@/app/lib/supabaseClient';
-import LogoutButton from '@/app/ui/LogoutButton/LogoutButton';
-
-import { redirect } from 'next/navigation';
+'use client';
+import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { UserContext } from '../UserContext';
 import styles from './AdminDashboard.module.css';
 
-const AdminDashboard: React.FC = async () => {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data?.user) {
-    redirect('/admin/login');
-  }
+const AdminDashboard: React.FC = () => {
+  const { userEmail } = useContext(UserContext);
 
   return (
-    <div className={styles.container}>
-      <h1>TESTEST</h1>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <h1>Welcome back.</h1>
       <p>
-        Hello
-        {data.user.email}
+        Signed in as
+        {' '}
+        {userEmail}
       </p>
-      <LogoutButton />
-    </div>
+    </motion.div>
   );
 };
 

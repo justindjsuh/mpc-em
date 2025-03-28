@@ -57,3 +57,13 @@ export async function resetPassword(email: string) {
 
   return { success: true, message: 'Password reset email sent!' }; // Success message
 }
+
+export async function verifyUser() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data?.user || !data?.user?.email) {
+    redirect('/admin/login');
+  }
+  return { status: 'verified', email: data.user.email };
+}

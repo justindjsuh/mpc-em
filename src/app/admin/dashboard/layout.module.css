@@ -1,7 +1,6 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(45deg, #6a11cb, #2575fc);
@@ -9,12 +8,12 @@
 
 .layoutContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding: 4rem 2rem;
   gap: 5rem;
   width: 100%;
   height: 100%;
-  background: linear-gradient(170deg, transparent 0%, transparent 30%, #fafafa 30%, #fafafa 100%);
   /* background: linear-gradient(100deg, #e4e5e6, #d4baecbc); */
   /* background-color: #e4e5e6; */
   animation: gradientShift 5s ease infinite;
@@ -36,17 +35,17 @@
   /* background-color: rgba(156, 156, 156, 0.3); */
   /* background: linear-gradient(210deg, #fff 0%, #fafafa 90%, #d4baec 90%, #d4baec 100%); */
   backdrop-filter: blur(20px);
-  height: 90%;
+  /* height: 90%; */
   border-radius: 10px;
 }
 
 .mainContent {
   background-color: var(--bg-light);
-  height: 90%;
   width: 70%;
   box-shadow: 0 4px 22px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 3rem;
+  z-index: 1;
 }
 
 .nav {
@@ -58,4 +57,19 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.logoNav {
+  width: fit-content;
+  padding: 2rem 0 0 4rem;
+  background-color: transparent;
+}
+
+.container2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(170deg, transparent 0%, transparent 35%, #fafafa 35%, #fafafa 100%);
 }

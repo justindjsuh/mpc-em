@@ -84,9 +84,7 @@ const EventsList: React.FC = () => {
 
     setPastEvents(past);
     setData(upcoming);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    setLoading(false);
   };
 
   const handleRowClick = (rowRecord: EventsApiResponse) => {
