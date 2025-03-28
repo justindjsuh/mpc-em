@@ -1,31 +1,57 @@
 'use client';
-import { Form } from 'antd';
+import type { FormProps } from 'antd';
+import { Form, notification } from 'antd';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { login, resetPassword } from './actions';
 import ForgotComponent from './components/ForgotComponent';
 import LoginComponent from './components/LoginComponent';
 import styles from './Login.module.css';
 
 export type Views = 'login' | 'register' | 'forgot' | 'forgotFinal';
+export type NotificationType = 'success' | 'info' | 'warning' | 'error';
 
-// interface FieldType {
-//   email?: string;
-//   password?: string;
-// }
+export interface FieldType {
+  email: string;
+  password: string;
+}
 
 const AdminLogin: React.FC = () => {
+  const [email, setEmail] = useState('');
   const [view, setView] = useState<Views>('login');
+  const [api, contextHolder] = notification.useNotification();
   const [form] = Form.useForm();
+  const router = useRouter();
 
-  // const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-  //   console.log(values);
-  // };
+  const openNotificationWithIcon = (type: NotificationType, message: string, description?: string) => {
+    api[type]({ message, description });
+  };
+
+  const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+    if (view === 'login') {
+      const result = await login(values.email, values.password);
+
+      if (result?.error?.message === 'Invalid login credentials') {
+        openNotificationWithIcon('error', 'Login Failed', 'Incorrect email or password.');
+      } else if (result?.status === 'success') {
+        router.push('/admin/dashboard');
+        openNotificationWithIcon('success', 'Login Successful!');
+      } else {
+        openNotificationWithIcon('warning', 'Login Failed', 'An error occurred, please try again.');
+      }
+    } else if (view === 'forgot') {
+      await resetPassword(values.email);
+      setView('forgotFinal');
+      setEmail(values.email);
+    }
+  };
 
   return (
     <div className={styles.container}>
-      <div className={styles['sine-wave-overaly']}></div>
+      {contextHolder}
       <Link href="/" style={{ position: 'absolute', top: '3%', left: '5%' }}>
         <Image
           src="/admin_logo.png"
@@ -57,7 +83,7 @@ const AdminLogin: React.FC = () => {
                     <p>
                       Thanks! If
                       {' '}
-                      <strong>aewf@gmail.com</strong>
+                      <strong>{email}</strong>
                       {' '}
                       matches an email we have on file, then we've sent you an email containing further instructions for resetting your password.
                     </p>
@@ -92,6 +118,7 @@ const AdminLogin: React.FC = () => {
                   >
                     <h3>{view === 'login' ? 'Sign in to your account' : 'Reset your password'}</h3>
                     <Form
+                      onFinish={onFinish}
                       className={styles.form}
                       form={form}
                       name="login"

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 'use client';
 import type { Views } from '../page';
 import { Button, Form, Input } from 'antd';
@@ -13,7 +14,6 @@ const LoginComponent: React.FC<IViewProps> = ({ setView }) => {
       <span>Password</span>
       <div
         role="button"
-        tabIndex={0}
         onClick={() => setView('forgot')}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {

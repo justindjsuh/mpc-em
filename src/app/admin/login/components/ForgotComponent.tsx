@@ -4,10 +4,6 @@ import { Button, Form, Input } from 'antd';
 import styles from '../Login.module.css';
 
 const ForgotComponent: React.FC<IViewProps> = ({ setView }) => {
-  const handleForgotPasswordClick = () => {
-    setView('forgotFinal');
-  };
-
   return (
     <>
       <Form.Item
@@ -20,7 +16,6 @@ const ForgotComponent: React.FC<IViewProps> = ({ setView }) => {
         <Input size="large" />
       </Form.Item>
       <Button
-        onClick={handleForgotPasswordClick}
         type="primary"
         htmlType="submit"
         block
