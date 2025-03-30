@@ -1,4 +1,4 @@
-interface EventLinks {
+export interface EventLinks {
   label: string;
   link: string;
 }

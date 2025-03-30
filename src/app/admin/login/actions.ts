@@ -67,3 +67,28 @@ export async function verifyUser() {
   }
   return { status: 'verified', email: data.user.email };
 }
+
+export async function uploadImg(filename: string, fileObj: any) {
+  const supabase = await createClient();
+
+  if (!filename || !fileObj) {
+    return { data: null, error: 'Missing Image' };
+  }
+
+  const { error } = await supabase.storage
+    .from('event-images') // Your public bucket name
+    .upload(filename, fileObj, {
+      cacheControl: '3600',
+      upsert: false,
+    });
+
+  if (error) {
+    return { data: null, error };
+  }
+
+  const { data: publicUrlData } = supabase.storage
+    .from('event-images')
+    .getPublicUrl(filename);
+
+  return { data: publicUrlData, error: null };
+}
