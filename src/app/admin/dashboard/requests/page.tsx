@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-const ManageLeaders: React.FC = () => {
+const AccessRequests: React.FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,4 +14,4 @@ const ManageLeaders: React.FC = () => {
   );
 };
 
-export default ManageLeaders;
+export default AccessRequests;
