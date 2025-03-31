@@ -53,8 +53,8 @@ const RecentSermon: React.FC = () => {
       >
         <div className={styles.sermonDetailText}>
           <p className={styles.sermonHeader}>LISTEN</p>
-          <h3>Recent Sermons</h3>
-          <p>Every sermons is Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta.</p>
+          <h3>Recent Sermon</h3>
+          <p>Feel free to listen to our most recent sermon! We also have an extensive library of sermons for you to listen to, to keep you engaged throughout the week.</p>
         </div>
         <Button
           text="View All Sermons"
