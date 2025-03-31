@@ -25,12 +25,12 @@
 
 ### Landing Page
 <p align="center">
-    <img src="./screenshots/DEMO.gif" width="738" />
+    <img src="./media/LANDING_DEMO.gif" width="738" />
 </p>
 
 ### Navbar
 <p align="center">
-    <img src="./screenshots/DEMO.gif" width="738" />
+    <img src="./media/NAV_DEMO_DESKTOP.gif" width="738" />
 </p>
 
 ## Screenshots
@@ -38,49 +38,49 @@
 <h3 align="center">Landing Page<h3>
 
 <p align="center">
-    <img src="./screenshots/LANDING.png" alt="landing page" width="738">
+    <img src="./media/LANDING.png" alt="landing page" width="738">
 </p>
 
 <h3 align="center">Get Connected<h3>
 
 <p align="center">
-    <img src="./screenshots/ABOUT.png" alt="about me section" width="738">
+    <img src="./media/GET_CONNECTED.png" alt="about me section" width="738">
 </p>
 
 <h3 align="center">Visitor Information<h3>
 
 <p align="center">
-    <img src="./screenshots/EXPERIENCE.png" alt="experiences section" width="738">
+    <img src="./media/VISITOR_INFORMATION.png" alt="experiences section" width="738">
 </p>
 
 <h3 align="center">Sermons<h3>
 
 <p align="center">
-    <img src="./screenshots/PROJECTS.png" alt="projects section" width="738">
+    <img src="./media/SERMONS.png" alt="projects section" width="738">
 </p>
 
 <h3 align="center">Events<h3>
 
 <p align="center">
-    <img src="./screenshots/CONTACT.png" alt="contact me section" width="738">
+    <img src="./media/EVENTS.png" alt="contact me section" width="738">
 </p>
 
 <h3 align="center">Single Event<h3>
 
 <p align="center">
-    <img src="./screenshots/CONTACT.png" alt="contact me section" width="738">
+    <img src="./media/SINGLE_EVENT.png" alt="contact me section" width="738">
 </p>
 
 <h3 align="center">Admin Login<h3>
 
 <p align="center">
-    <img src="./screenshots/CONTACT.png" alt="contact me section" width="738">
+    <img src="./media/ADMIN_LOGIN.png" alt="contact me section" width="738">
 </p>
 
 <h3 align="center">Admin Event Dashboard<h3>
 
 <p align="center">
-    <img src="./screenshots/CONTACT.png" alt="contact me section" width="738">
+    <img src="./media/ADMIN_EVENTS.png" alt="contact me section" width="738">
 </p>
 
 
@@ -113,5 +113,5 @@ This project also got me thinking about my designs. So often I design things in 
 Lastly, this project definitely came with its difficulties. The client this time didn't really have much to say for designs, and the entire process was really left up to me as the sole developer. It made it much more difficult and took more time than it probably should've. One thing I feel like I want to do in the future, is ask the client - How involved do you want to be in this development process? It saves both parties a lot of time if we're both aware of what the expectation is for the client and developer. 
 </p>
 <p>
-    Overall, I really enjoyed working on this project, and although I was a bit rushed to get this done, I was very satisfied with the product, and the client was happy with it too!
+    I was particularly proud of the nav bar that I created, which was inspired by Apple. Other UI design work was not bad and had some good implementations, but could be improved in the future. Overall, I really enjoyed working on this project, and although I was a bit rushed to get this done, I was very satisfied with the product, and the client was happy with it too!
 </p>
