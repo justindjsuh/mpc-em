@@ -19,7 +19,7 @@ const IntroDetails: React.FC = () => {
             <h3>COME AS YOU ARE. GROW IN FAITH AND CONNECTION.</h3>
           </div>
           <div className={styles.detailsSubText}>
-            <p>We at MPC Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta. Netus lobortis sit arcu tincidunt, aliquam class.</p>
+            <p>We at MPC desire to help you to walk alongside fellow brothers and sisters in Christ - glorifying Him, serving Him, and loving as He called us to love. Join us online or in-person! We have all the information you need to make your first visit a fruitful one!</p>
             <Button text="Plan Your Visit" onClick={() => {}} theme="dark" iconTheme="dark" />
           </div>
         </div>

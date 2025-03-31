@@ -116,7 +116,7 @@ const SermonList: React.FC = () => {
                 transition={{ delay: 0.35, duration: 0.6, ease: 'easeOut' }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <p>We have an entire sermon archive for you to listen to! We pray that these messages will be a blessing to you and Et cursus urna laoreet metus nam consectetur; nec ipsum porta.</p>
+                <p>We encourage you to take a listen to any of our extensive list of sermons we have available for you! Whether it would be our most recent sermon, or a sermon of the past, we want you to have every resource to keep you engaged with God's Word any day of the week. </p>
               </motion.div>
             </div>
           </div>

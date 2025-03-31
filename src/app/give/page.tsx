@@ -24,7 +24,15 @@ const GivePage: React.FC = () => {
             transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
           >
             <h3>STRENGTHEN OUR COMMUNITY THROUGH YOUR SUPPORT.</h3>
-            <p>At MPC, we aim to worship God by giving and contributing "cheerfully and regularly" (2 Corinthians 9:6-7) to the support of the ministry, expenses of the church, relief of the poor, and the spread of the gospel amongst all nations.</p>
+            <div>
+              <p>At MPC, we aim to worship God by giving and contributing "cheerfully and regularly" (2 Corinthians 9:6-7) to the support of the ministry, expenses of the church, relief of the poor, and the spread of the gospel amongst all nations.</p>
+              <br />
+              <p>
+                You can easily give through our Venmo
+                {' '}
+                <strong>@MPC-EM</strong>
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

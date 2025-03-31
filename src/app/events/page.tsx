@@ -156,7 +156,7 @@ const EventsList: React.FC = () => {
               transition={{ delay: 0.35, duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <p>At MPC we have events — Lorem ipsum odor amet, consectetuer adipiscing elit. Et cursus urna laoreet metus nam consectetur; nec ipsum porta.</p>
+              <p>At MPC we have events to keep you engaged with the community, both within and outside of MPC. Join us in fellowship, grow closer to one another, and glorify God through it all.</p>
             </motion.div>
           </div>
         </div>
